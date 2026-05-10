@@ -1,0 +1,25 @@
+# FlagOnBerryHoldingController
+entities.BreadHelper/FlagOnBerryHoldingController.placements.name.FlagOnBerryHoldingController=Flag On Holding Berry Controller
+entities.BreadHelper/FlagOnBerryHoldingController.placements.description.FlagOnBerryHoldingController=Sets a flag while the player is currently holding one or more berries, and unsets it when they are not.
+entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.flagName=Flag
+entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.checkGolden=Check for Golden Berry
+entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.checkMoon=Check for Moon Berry
+
+
+# FlagOnBerryPickupController
+entities.BreadHelper/FlagOnBerryPickupController.placements.name.FlagOnBerryPickupController=Flag On Pickup Berry Controller
+entities.BreadHelper/FlagOnBerryPickupController.placements.description.FlagOnBerryPickupController=Sets a flag when the player picks up a berry. This flag will be set again if the flag is disabled and the player picks up another berry.
+entities.BreadHelper/FlagOnBerryPickupController.attributes.name.flagName=Flag
+entities.BreadHelper/FlagOnBerryPickupController.attributes.name.checkGolden=Check for Golden Berry
+entities.BreadHelper/FlagOnBerryPickupController.attributes.name.checkMoon=Check for Moon Berry
+
+# DashSpeedWater
+entities.BreadHelper/DashSpeedWater.placements.name.DashSpeedWater=Custom Dash Speed Water
+entities.BreadHelper/DashSpeedWater.placements.description.DashSpeedWater=Water that allows you to change the dash speed multiplier while dashing in it (vanilla is always 0.75)
+entities.BreadHelper/DashSpeedWater.attributes.name.speedMod=Dash Speed Multiplier
+entities.BreadHelper/DashSpeedWater.attributes.description.speedMod=The dash speed multiplier when dashing in the water.
+entities.BreadHelper/DashSpeedWater.attributes.description.hasBottom=Determines whether or not the water has a bottom.
+
+# ScreenSizedRectangle
+entities.BreadHelper/ScreenSizedRectangle.placements.name.ScreenSizedRectangle=Screen Size Rectangle (Lonn only)
+entities.BreadHelper/ScreenSizedRectangle.placements.description.ScreenSizedRectangle=A rectangle that is the default screen size. Only appears in Lonn and does nothing in game.
