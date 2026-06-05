@@ -180,8 +180,8 @@ public class SpecialBumper : Bumper
             vector.X = Math.Sign(vector.X);
         } else
         {
-            vector.Y = Math.Sign(vector.Y) * 0.7f;
-            vector.X = Math.Sign(vector.X) * 0.7f;
+            vector.Y = Math.Sign(vector.Y) * Convert.ToSingle(Math.Sqrt(0.5));
+            vector.X = Math.Sign(vector.X) * Convert.ToSingle(Math.Sqrt(0.5));
         }
         player.Speed = 280f * vector;
         if (player.Speed.Y <= 50f)
