@@ -19,9 +19,13 @@ public class BreadHelperModule : EverestModule {
         Instance = this;
 #if DEBUG
         // debug builds use verbose logging
+        // copyable debug line:
+        // Logger.Debug($"{nameof(BreadHelperModule)}/{nameof(EntityName)}", "string");
         Logger.SetLogLevel(nameof(BreadHelperModule), LogLevel.Verbose);
 #else
         // release builds use info logging to reduce spam in log files
+        // Logger.Debug($"{nameof(BreadHelperModule)}/{nameof(Class)}", "log message");
+        // ^ debug line to copy
         Logger.SetLogLevel(nameof(BreadHelperModule), LogLevel.Info);
 #endif
     }
@@ -29,12 +33,14 @@ public class BreadHelperModule : EverestModule {
     public override void Load() {
         FlagOnBerryPickupController.Load();
         DashSpeedWater.Load();
+        RevSpeedDashBlock.Load();
         // TODO: apply any hooks that should always be active
     }
 
     public override void Unload() {
         FlagOnBerryPickupController.Unload();
         DashSpeedWater.Unload();
+        RevSpeedDashBlock.Unload();
         // TODO: unapply any hooks applied in Load()
     }
 }
