@@ -5,6 +5,7 @@ entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.flagName=Flag
 entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.checkGolden=Check for Golden Berry
 entities.BreadHelper/FlagOnBerryHoldingController.attributes.name.checkMoon=Check for Moon Berry
 
+
 # FlagOnBerryPickupController
 entities.BreadHelper/FlagOnBerryPickupController.placements.name.FlagOnBerryPickupController=Flag On Pickup Berry Controller
 entities.BreadHelper/FlagOnBerryPickupController.placements.description.FlagOnBerryPickupController=Sets a flag when the player picks up a berry. This flag will be set again if the flag is disabled and the player picks up another berry.
@@ -22,25 +23,3 @@ entities.BreadHelper/DashSpeedWater.attributes.description.hasBottom=Determines 
 # ScreenSizedRectangle
 entities.BreadHelper/ScreenSizedRectangle.placements.name.ScreenSizedRectangle=Screen Size Rectangle (Lonn only)
 entities.BreadHelper/ScreenSizedRectangle.placements.description.ScreenSizedRectangle=A rectangle that is the default screen size. Only appears in Lonn and does nothing in game.
-
-# RevSpeedDashBlock
-entities.BreadHelper/RevSpeedDashBlock.placements.name.RevSpeedDashBlock=Reverse Speed Dash Block
-entities.BreadHelper/RevSpeedDashBlock.placements.description.RevSpeedDashBlock=A dash block that reverses the player's speed when broken. Has many customization options for the directions your speed is flipped.
-entities.BreadHelper/RevSpeedDashBlock.attributes.name.HorizontalFlip=Horizontal Side Speed Flip
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.HorizontalFlip=Which of the player's speeds get reversed when hitting the horizontal sides of the block.
-entities.BreadHelper/RevSpeedDashBlock.attributes.name.VerticalFlip=Vertical Side Speed Flip
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.VerticalFlip=Which of the player's speeds get reversed when hitting the vertical sides of the block.
-entities.BreadHelper/RevSpeedDashBlock.attributes.name.refillSound=Play Refill Sound
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.refillSound=If the refill sound should be played (only activates if Refill Dash is also activated)
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.canDash=Whether the player can break the block by dashing into it.
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.blendin=Blends the block with the walls it touches, making it less apparent.
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.tiletype=Determines the visual appearance of the wall.
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.permanent=Once broken, the block will remain that way, even if the player dies.
-entities.BreadHelper/RevSpeedDashBlock.attributes.description.breakSound=Sound played when the block breaks.\nMost tilesets use the stone sound, except for dirt, snow, and wood, which use dirt, ice, and wood break sounds respectively.
-
-# SpecialBumper
-entities.BreadHelper/SpecialBumper.placements.name.SpecialBumper=Special Bumper
-entities.BreadHelper/SpecialBumper.placements.description.SpecialBumper=A bumper with many customizable options and modes, with the unique ones being an option to reverse your speed on hit, an option to only launch in 8 directions, and a customizable dash cooldown.
-entities.BreadHelper/SpecialBumper.attributes.description.launchMode=The way the bumper behaves when touched.\nNormal-Functions like vanilla bumpers.\nEight Way-Mostly like vanilla bumpers, but will only launch in 8 set directions.\nReverse Speed-Reverses the player's speed when hit.
-entities.BreadHelper/SpecialBumper.attributes.description.dashCooldown=Cooldown before the player can dash again after hitting the bumper.
-entities.BreadHelper/SpecialBumper.attributes.description.respawnTime=Time the bumper takes to be reform in order to be hit again.
