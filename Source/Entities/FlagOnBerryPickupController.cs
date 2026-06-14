@@ -42,18 +42,22 @@ public class FlagOnBerryPickupController : Entity
         {
             return;
         }
-
-        if (controller is not null && self is Strawberry {Golden: false, Moon: false})
+        if (controller is not null && !string.IsNullOrEmpty(controller.flagName))
         {
-            level.Session.SetFlag(controller.flagName, true);
-        } else if (controller is not null && self is Strawberry { Golden: true, Moon: false } && controller.checkGolden == true)
-        {
-            level.Session.SetFlag(controller.flagName, true);
+            if (self is Strawberry { Golden: false, Moon: false })
+            {
+                level.Session.SetFlag(controller.flagName, true);
+            }
+            else if (self is Strawberry { Golden: true, Moon: false } && controller.checkGolden == true)
+            {
+                level.Session.SetFlag(controller.flagName, true);
+            }
+            else if (self is Strawberry { Golden: false, Moon: true } && controller.checkMoon == true)
+            {
+                level.Session.SetFlag(controller.flagName, true);
+            }
         }
-        else if (controller is not null && self is Strawberry { Golden: false, Moon: true } && controller.checkMoon == true)
-        {
-            level.Session.SetFlag(controller.flagName, true);
-        }
+        
 
         orig(self, player);
     }

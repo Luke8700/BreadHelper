@@ -14,6 +14,8 @@ public class RevSpeedDashBlock : DashBlock
 
     private bool refillSound;
 
+    private bool destroyAttached;
+
     private string HorizontalFlip;
 
     private string VerticalFlip;
@@ -22,6 +24,7 @@ public class RevSpeedDashBlock : DashBlock
         breakSound = data.String("breakSound");
         refillDash = data.Bool("refillDash");
         refillSound = data.Bool("refillSound");
+        destroyAttached = data.Bool("destroyAttached");
         HorizontalFlip = data.String("HorizontalFlip");
         VerticalFlip = data.String("VerticalFlip");
     }
@@ -131,6 +134,10 @@ public class RevSpeedDashBlock : DashBlock
         launched = false;
         lowFrictionStopTimer = 0.15f;
         */
+        if (destroyAttached)
+        {
+            DestroyStaticMovers();
+        }
     }
 
 }

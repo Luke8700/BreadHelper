@@ -44,3 +44,26 @@ entities.BreadHelper/SpecialBumper.placements.description.SpecialBumper=A bumper
 entities.BreadHelper/SpecialBumper.attributes.description.launchMode=The way the bumper behaves when touched.\nNormal-Functions like vanilla bumpers.\nEight Way-Mostly like vanilla bumpers, but will only launch in 8 set directions.\nReverse Speed-Reverses the player's speed when hit.
 entities.BreadHelper/SpecialBumper.attributes.description.dashCooldown=Cooldown before the player can dash again after hitting the bumper.
 entities.BreadHelper/SpecialBumper.attributes.description.respawnTime=Time the bumper takes to be reform in order to be hit again.
+
+# TimedDashSwitch
+entities.BreadHelper/TimedDashSwitch.placements.name.up=Timed Dash Switch (Up)
+entities.BreadHelper/TimedDashSwitch.placements.name.down=Timed Dash Switch (Down)
+entities.BreadHelper/TimedDashSwitch.placements.name.left=Timed Dash Switch (Left)
+entities.BreadHelper/TimedDashSwitch.placements.name.right=Timed Dash Switch (Right)
+entities.BreadHelper/TimedDashSwitch.placements.description.up=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
+entities.BreadHelper/TimedDashSwitch.placements.description.down=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
+entities.BreadHelper/TimedDashSwitch.placements.description.left=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
+entities.BreadHelper/TimedDashSwitch.placements.description.right=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
+entities.BreadHelper/TimedDashSwitch.attributes.description.sprite=Changes the visual appearance of the switch.
+entities.BreadHelper/TimedDashSwitch.attributes.description.allGates=Whether the switch should open all temple gates instead of opening only the closest one.
+entities.BreadHelper/TimedDashSwitch.attributes.description.flag=The flag that is set while the switch is pressed. If it is empty, no flag will be set.
+entities.BreadHelper/TimedDashSwitch.attributes.description.time=How long the switch stays pressed before resetting.
+entities.BreadHelper/TimedDashSwitch.attributes.description.openFast=Whether the temple gate should play its full opening animation that it usually does or open faster.
+
+# AngledCloud
+entities.BreadHelper/AngledCloud.placements.name.normal=Arbitrary Angle Cloud
+entities.BreadHelper/AngledCloud.placements.description.normal=A cloud that can move at any angle instead of just down then up.
+entities.BreadHelper/AngledCloud.attributes.description.fragile=Determines whether the cloud will temporarily disappear after being touched.
+entities.BreadHelper/AngledCloud.attributes.description.small=Reduces the surface area of the cloud.
+entities.BreadHelper/AngledCloud.attributes.description.angle=The angle at which the cloud launches. Vanilla (launch straight up) is 90 degrees.
+entities.BreadHelper/AngledCloud.attributes.description.hasArrow=Whether or not to display an arrow that indicated the direction.

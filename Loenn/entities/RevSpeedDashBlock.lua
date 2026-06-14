@@ -32,11 +32,21 @@ function RevSpeedDashBlock.placements()
             permanent = false,
             refillDash = false,
             refillSound = true,
+            destroyAttached = true,
             width = 8,
             height = 8
         }
     }
 end
+
+RevSpeedDashBlock.fieldOrder = {
+	"x", "y",
+	"width", "height",
+	"breakSound", "tiletype",
+	"HorizontalFlip", "VerticalFlip",
+	"blendin", "canDash", "permanent", "destroyAttached",
+	"refillDash", "refillSound"
+}
 
 function RevSpeedDashBlock.fieldInformation()
   return {
@@ -55,6 +65,9 @@ function RevSpeedDashBlock.fieldInformation()
     VerticalFlip = {
       options = dropdownOptions2,
       editable = false
+    },
+    destroyAttached = {
+      default = true
     }
   }
 end

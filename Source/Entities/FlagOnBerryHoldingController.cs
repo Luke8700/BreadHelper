@@ -57,7 +57,11 @@ public class FlagOnBerryHoldingController : Entity
             break;
 
         }
-        level.Session.SetFlag(flagName, hasBerry);
+        if (!string.IsNullOrEmpty(flagName))
+        {
+            level.Session.SetFlag(flagName, hasBerry);
+        }
+        
 
     }
 
