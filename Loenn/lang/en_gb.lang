@@ -46,10 +46,7 @@ entities.BreadHelper/SpecialBumper.attributes.description.dashCooldown=Cooldown 
 entities.BreadHelper/SpecialBumper.attributes.description.respawnTime=Time the bumper takes to be reform in order to be hit again.
 
 # TimedDashSwitch
-entities.BreadHelper/TimedDashSwitch.placements.name.up=Timed Dash Switch (Up)
-entities.BreadHelper/TimedDashSwitch.placements.name.down=Timed Dash Switch (Down)
-entities.BreadHelper/TimedDashSwitch.placements.name.left=Timed Dash Switch (Left)
-entities.BreadHelper/TimedDashSwitch.placements.name.right=Timed Dash Switch (Right)
+entities.BreadHelper/TimedDashSwitch.placements.name.up=Timed Dash Switch
 entities.BreadHelper/TimedDashSwitch.placements.description.up=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
 entities.BreadHelper/TimedDashSwitch.placements.description.down=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
 entities.BreadHelper/TimedDashSwitch.placements.description.left=A dash switch that will unpress itself and close the opened door after a certain time. Can also set a flag while pressed.
@@ -67,3 +64,29 @@ entities.BreadHelper/AngledCloud.attributes.description.fragile=Determines wheth
 entities.BreadHelper/AngledCloud.attributes.description.small=Reduces the surface area of the cloud.
 entities.BreadHelper/AngledCloud.attributes.description.angle=The angle at which the cloud launches. Vanilla (launch straight up) is 90 degrees.
 entities.BreadHelper/AngledCloud.attributes.description.hasArrow=Whether or not to display an arrow that indicated the direction.
+
+# DashMoveBlock
+entities.BreadHelper/DashMoveBlock.placements.name.DashMoveBlock=Dash Move Block
+entities.BreadHelper/DashMoveBlock.placements.description.DashMoveBlock=A move block that will activate when dashed into. Also has the option to activate by standing but not until it has been dashed into.
+entities.BreadHelper/DashMoveBlock.attributes.description.canSteer=Determines whether the move block can be moved by the player.
+entities.BreadHelper/DashMoveBlock.attributes.description.speed=The speed of the move block. Vanilla "fast" is 75, and "slow" is 60.
+entities.BreadHelper/DashMoveBlock.attributes.description.startupTime=The time the move block shakes once activated before it starts moving.
+entities.BreadHelper/DashMoveBlock.attributes.description.direction=Determines the direction the move block moves in upon activation.
+entities.BreadHelper/DashMoveBlock.attributes.description.triggerOnDash=Whether the block will immediately activate on being dashed into, or wait until it is stood on after.
+entities.BreadHelper/DashMoveBlock.attributes.description.fixDepth=Gives the move block a normal depth value so it doesn't have inconsistent layering with spikes.
+entities.BreadHelper/DashMoveBlock.attributes.description.breakSound=Sound played when the block is first dashed into.
+entities.BreadHelper/DashMoveBlock.attributes.description.borderTexture=The texture of the border. Put the image in Graphics/Atlases/Gameplay/objects/BreadHelper/DashMoveBlock/texturename.png, with texturename in this field. See the defualt image to see how to format it. This will not apply in lonn sorry, :P.
+
+# BufferFixSpring
+entities.BreadHelper/BufferFixSpring.placements.name.BufferFixSpring=Buffer Fix Spring
+entities.BreadHelper/BufferFixSpring.placements.description.BufferFixSpring=Buffer Fix Spring=A spring that will not apply forcemove if you dash right after hitting it. Also supports down facing cause I felt like it.
+entities.BreadHelper/BufferFixSpring.attributes.description.playerCanUse=Determines whether the player is able to interact with the spring.
+
+# MirrorCustomizer
+entities.BreadHelper/MirrorCustomizer.placements.name.MirrorCustomizer=Mirror Customizer
+entities.BreadHelper/MirrorCustomizer.placements.description.MirrorCustomizer=An entity that allows you to give/take away reflections to/from any given entity that is inside this entity.
+entities.BreadHelper/MirrorCustomizer.attributes.description.RemoveMirror=Comma seperated list of entities to remove reflections from. Enter the name given at the top of the box in lonn for this field, not the class name.
+entities.BreadHelper/MirrorCustomizer.attributes.description.AddMirror=Comma seperated list of entities to give reflections to. Enter the name given at the top of the box in lonn for this field, not the class name.
+entities.BreadHelper/MirrorCustomizer.attributes.description.RemoveMirrorByClass=Comma seperated list of entities to remove reflections from. This field uses class names to affect particular entities that are not directly placeable in lonn.
+entities.BreadHelper/MirrorCustomizer.attributes.description.AddMirrorByClass=Comma seperated list of entities to give reflections to. This field uses class names to affect particular entities that are not directly placeable in lonn.
+entities.BreadHelper/MirrorCustomizer.attributes.description.updateFlag=When this flag is set, this entity will re-check what entities are inside it and apply/remove reflections accordingly.

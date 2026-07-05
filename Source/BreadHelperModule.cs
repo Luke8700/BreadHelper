@@ -31,14 +31,12 @@ public class BreadHelperModule : EverestModule {
     public override void Load() {
         FlagOnBerryPickupController.Load();
         DashSpeedWater.Load();
-        RevSpeedDashBlock.Load();
         // TODO: apply any hooks that should always be active
     }
 
     public override void Unload() {
         FlagOnBerryPickupController.Unload();
         DashSpeedWater.Unload();
-        RevSpeedDashBlock.Unload();
         // TODO: unapply any hooks applied in Load()
     }
 }

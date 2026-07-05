@@ -27,30 +27,13 @@ public class RevSpeedDashBlock : DashBlock
         destroyAttached = data.Bool("destroyAttached");
         HorizontalFlip = data.String("HorizontalFlip");
         VerticalFlip = data.String("VerticalFlip");
+        OnDashCollide = RevOnDashed;
     }
-
-    public static void Load()
+    private DashCollisionResults RevOnDashed(Player player, Vector2 direction)
     {
-        On.Celeste.DashBlock.OnDashed += DashedHook;
+        RevSpeedBreak(player.Center, direction);
+        return DashCollisionResults.Ignore;
     }
-    public static void Unload()
-    {
-        On.Celeste.DashBlock.OnDashed -= DashedHook;
-    }
-
-    private static DashCollisionResults DashedHook(On.Celeste.DashBlock.orig_OnDashed orig, DashBlock self, Player player, Vector2 direction)
-    {
-        if (self is RevSpeedDashBlock customSelf)
-        {
-            customSelf.RevSpeedBreak(player.Center, direction);
-            return DashCollisionResults.Ignore;
-        }
-        else
-        {
-            return orig(self, player, direction);
-        }
-    }
-
     private void RevSpeedBreak(Vector2 from, Vector2 direction, bool playSound = true, bool playDebrisSound = true)
     {
         Audio.Play(breakSound, Position);

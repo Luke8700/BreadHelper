@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework;
 using Monocle;
 using MonoMod;
 using System;
-using System.Runtime.CompilerServices;
-using static MonoMod.InlineRT.MonoModRule;
 
 namespace Celeste.Mod.BreadHelper.Entities;
 
@@ -41,15 +39,13 @@ public class AngledCloud : Cloud
         overrideriding = false;
         cos = Convert.ToSingle(Math.Cos(angle * (Math.PI / 180)));
         sin = Convert.ToSingle(Math.Sin(Convert.ToDouble(angle * (Math.PI / 180))));
-
-
     }
 
     public override void Added(Scene scene)
     {
         base.Added(scene);
         if (hasArrow) {
-            arrow = new Image(GFX.Game["BreadHelper/cloudarrow"]);
+            arrow = new Image(GFX.Game["objects/BreadHelper/AngledCloud/cloudarrow"]);
             arrow.CenterOrigin();
             arrow.Position.Y += 4;
             arrow.Rotation = -Convert.ToSingle((angle - 180) * (Math.PI / 180));

@@ -1,22 +1,12 @@
--- adapted from Lönn's src/entities/dash_switch.lua
--- Like 90% of this was copied from Snip tysm my goat :pray:
-local dropdownOptions = {
-  ["Default"] = "default",
-  ["Mirror"] = "mirror",
-}
-
 local drawableSprite = require("structs.drawable_sprite")
 
-local textures = {
-    default = "objects/temple/dashButton00",
-    mirror = "objects/temple/dashButtonMirror00",
-}
+local textures = "objects/spring/00"
 
 local switchSides = {
-  ["Down"] = 0,
-  ["Up"] = 1,
-  ["Right"] = 2,
-  ["Left"] = 3
+  ["Ceiling"] = 0,
+  ["Floor"] = 1,
+  ["WallLeft"] = 2,
+  ["WallRight"] = 3
 }
 
 local sideToClockwiseRotations = {
@@ -32,35 +22,27 @@ local clockwiseRotationsToSide = {
   [3] = 2
 }
 
-local TimedDashSwitch = {}
-TimedDashSwitch.name = "BreadHelper/TimedDashSwitch"
-TimedDashSwitch.fieldInformation = {
+local BufferFixSpring = {}
+BufferFixSpring.name = "BreadHelper/BufferFixSpring"
+BufferFixSpring.fieldInformation = {
   side = {
     options = switchSides,
     editable = false
   },
-  sprite = {
-    options = dropdownOptions,
-    editable = true
-  }
 }
 
-TimedDashSwitch.placements = {
+BufferFixSpring.placements = {
   {
-    name = "up",
+    name = "BufferFixSpring",
     data = {
       side = 1,
-      sprite = "default",
-      allGates = false,
-      openFast = false,
-      flag = "",
-      time = "2.0"
+      playerCanUse = true
     }
   }
 }
 
-function TimedDashSwitch.sprite(room, entity)
-  local texture = entity.sprite == "default" and textures["default"] or textures["mirror"]
+function BufferFixSpring.sprite(room, entity)
+  local texture = "objects/spring/00"
   local dashButtonSprite = drawableSprite.fromTexture(texture, entity)
 
   local side = entity.side
@@ -69,23 +51,23 @@ function TimedDashSwitch.sprite(room, entity)
   end
 
   if side == 0 then
-    dashButtonSprite:addPosition(8, 0)
-    dashButtonSprite.rotation = -math.pi / 2
-  elseif side == 1 then
-    dashButtonSprite:addPosition(8, 8)
-    dashButtonSprite.rotation = math.pi / 2
-  elseif side == 2 then
     dashButtonSprite:addPosition(0, 8)
     dashButtonSprite.rotation = math.pi
-  elseif side == 3 then
-    dashButtonSprite:addPosition(8, 8)
+  elseif side == 1 then
+    dashButtonSprite:addPosition(0, -8)
     dashButtonSprite.rotation = 0
+  elseif side == 2 then
+    dashButtonSprite:addPosition(8, 0)
+    dashButtonSprite.rotation = math.pi / 2
+  elseif side == 3 then
+    dashButtonSprite:addPosition(-8, 0)
+    dashButtonSprite.rotation = -math.pi / 2
   end
 
   return dashButtonSprite
 end
 
-function TimedDashSwitch.flip(room, entity, horizontal, vertical)
+function BufferFixSpring.flip(room, entity, horizontal, vertical)
   local side = entity.side
   if type(side) ~= "number" then
     return false
@@ -111,7 +93,7 @@ function TimedDashSwitch.flip(room, entity, horizontal, vertical)
   return false
 end
 
-function TimedDashSwitch.rotate(room, entity, direction)
+function BufferFixSpring.rotate(room, entity, direction)
   local side = entity.side
   if not (type(side) == "number" and side >= 0 and side <= 3) then
     return false
@@ -129,8 +111,4 @@ function TimedDashSwitch.rotate(room, entity, direction)
   return true
 end
 
-function TimedDashSwitch.texture(room, entity)
-  return entity.sprite
-end
-
-return TimedDashSwitch
+return BufferFixSpring

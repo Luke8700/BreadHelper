@@ -25,7 +25,7 @@ public class TimedDashSwitch : DashSwitch
         time = data.Float("time");
         flag = data.String("flag");
         openFast = data.Bool("openFast");
-        OnDashCollide = OnDashed;
+        OnDashCollide = OnDashedTimed;
         startPos = position;
     }
     public TimedDashSwitch(EntityData data, Vector2 offset, EntityID id) : this(
@@ -54,7 +54,7 @@ public class TimedDashSwitch : DashSwitch
         }
     }
 
-    public DashCollisionResults OnDashed(Player player, Vector2 direction)
+    private DashCollisionResults OnDashedTimed(Player player, Vector2 direction)
     {
         if (!pressed && direction == pressDirection)
         {
